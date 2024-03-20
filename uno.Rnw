@@ -13,13 +13,12 @@
 \newpage
 	La encuesta se realizó en la comunidad campesina de \comunidad\- del distrito de distrito, provincia de provincia departamento del Cusco.\\
 	\\
-	Para esto se considero informacion general de la poblacion, tomando en cuenta el genero, la edad y el recurso que utilizan, en este caso si usan qocha.\\
+	Para esto se considero informacion general de la población, tomando en cuenta el genero, la edad y el recurso que utilizan, en este caso si usan qocha.\\
 	\\
 	Del genero de las personas encuestadas se puede mostrar lo siguiente:
 	\begin{figure}[H]
 	\centering
 	<<uno, echo = FALSE, fig.width=4, fig.height=3>>=
-	#prueba uno
 	setwd("H:/Gore Cusco/IMA/pi alto apurimac/proyecto/encuesta")
 	datos <- read.csv("ask.csv")
 	datos$Comunidad <- trimws(datos$Comunidad)
@@ -31,12 +30,11 @@
 	
 	graph1 <- ggplot(datos2, aes(Sexo)) +
   geom_bar( fill = rgb(0.36, 0.79, 0.95), colour = "black") + xlab("") + ylab("") 
-	graph1
-	#prueba uno
+	graph1 + theme_bw()
 	@
 	\caption{Sexo de los encuestados de \comunidad}
 	\end{figure}
-	Se observa que las cantidades son casi similares, de la cual los de genero masculino es mayor. El alto porcentaje del sexo masculino sugiere que son numerosos en la comunidad de \comunidad en comparación con las mujeres. Esto podría tener varias implicaciones, como patrones de migración de género, roles tradicionales en la sociedad. Sin embargo el porcentaje de las mujeres indican que son una minoría en la sociedad. Finalmente estos datos puden reflejar dinámicas sociales, económicas y culturales particulares en la comunidad de Chilloroya
+	Del gráfico se evidencia que el genero masculino es mayor. El alto porcentaje del sexo masculino sugiere que son numerosos en la comunidad de \comunidad en comparación con las mujeres. Esto podría tener varias implicaciones, como patrones de migración de género, roles tradicionales en la sociedad. Sin embargo el porcentaje de las mujeres indican que son una minoría en la sociedad. Finalmente estos datos puden reflejar dinámicas sociales, económicas y culturales particulares en la comunidad de Chilloroya
 	\section{Datos generales}
 	Edad de los encuestados, de la encuesta realizada se tiene la edad de los participantes, como se muestra a continuacion "mejorar, no redundancia":
 	\begin{figure}[H]
@@ -54,7 +52,7 @@
   p <- ggplot(datos2, aes(edad, fill = Sexo)) +
   geom_bar() +
     coord_flip()
-  p
+  p + theme_bw()
   
 @
              	
@@ -78,7 +76,7 @@ Se pregunto respecto a la tenencia de la propiedad en la que habitan los encuest
 	
 	graph3 <- ggplot(datos2, aes(tenencia)) +
   geom_bar( fill = rgb(0.36, 0.79, 0.95), colour = "white") + xlab("propiedad") + ylab("frecuencia")  
-	graph3
+	graph3 + theme_bw()
 	@
 	\caption{Tenencia de la propiedad de los pobladores de \comunidad}
 	\end{figure}
@@ -100,7 +98,7 @@ Se pregunto respecto a la tenencia de la propiedad en la que habitan los encuest
 	
 	graph4 <- ggplot(datos2, aes(añosh)) +
   geom_bar( fill = rgb(0.36, 0.79, 0.95), colour = "black") + xlab("Años") + ylab("Cantidad") + coord_flip()  
-	graph4
+	graph4 + theme_bw()
 	@
 	\caption{Años de permanencia de los pobladores en \comunidad}
 	\end{figure}
@@ -121,11 +119,11 @@ Se pregunto respecto a la tenencia de la propiedad en la que habitan los encuest
 	
 	graph5 <- ggplot(datos2, aes(Idioma)) +
   geom_bar( fill = rgb(0.36, 0.79, 0.95), colour = "black") + xlab("Cantidad") + ylab("Idioma")  
-	graph5
+	graph5 + theme_bw()
 	@
 	\caption{Idioma que habla el poblador}
 	\end{figure}
-	Se observa que el total de los encuestados hablan español y quechua. Esto explica que los pobladores de la comunidad de \comunidad son bilingües, esto sugiere que la educación en la comunidad marcó un hito importante en la lengua, donde se intercambi quechua fortalece nuestra identidad nacional,  "mejorar".
+	Se observa que el total de los encuestados hablan español y quechua. Esto explica que los pobladores de la comunidad de \comunidad son bilingües, esto sugiere que la educación en la comunidad marcó un hito importante en la lengua, donde se intercambió quechua fortalece nuestra identidad nacional.
 	\section{Informacion de servicios}
 	De la fuente de agua que los pobladores se abastecen se identifico lo siguiente:
 	\begin{figure}[H]
@@ -142,7 +140,7 @@ Se pregunto respecto a la tenencia de la propiedad en la que habitan los encuest
 	
 	graph6 <- ggplot(datos2, aes(fuentea)) +
   geom_bar( fill = rgb(0.36, 0.79, 0.95), colour = "black") + xlab("Fuente de agua") + ylab("Cantidad")  
-	graph6
+	graph6 + theme_bw()
 	@
 	\caption{Fuente de agua para consumo de agua de los pobladores de \comunidad}
 	\end{figure}
@@ -164,7 +162,7 @@ Se pregunto respecto a la tenencia de la propiedad en la que habitan los encuest
 	
 	graph7 <- ggplot(datos2, aes(basura)) +
   geom_bar( fill = rgb(0.36, 0.79, 0.95), colour = "black") + xlab("Tipo de eliminacion") + ylab("Cantidad")  + coord_flip() 
-	graph7 
+	graph7 + theme_bw() 
 	 
 	@
 	\caption{Eliminacion de la basura en \comunidad}
@@ -420,12 +418,18 @@ Emisoras y horarios preferidos:
 	datos2$emisora.2.horario[datos2$emisora.2.horario == "05:00:00 p. m."] <- "17:00:00 p. m."
 	datos2$emisora.2.horario[datos2$emisora.2.horario == "07:00:00 p. m."] <- "19:00:00 p. m."
 	
+	
+	
+	
 	#probando eliminando NA
 	datos2$emisora.2.horario <- substr(datos2$emisora.2.horario, 1, nchar(datos2$emisora.2.horario)- 9)
 	
 	datos2 <- datos2[!is.na(datos2$emisora.2.horario), ]
 	ggplot(datos2, aes(emisora.2.horario)) + 
 	  geom_bar(fill = rgb(0.36, 0.79, 0.95))
+	
+	
+	
 	@
 	\caption{Horario de emisora preferida}
 	\end{figure}
@@ -457,7 +461,7 @@ Emisoras y horarios preferidos:
 	
 	ggplot(datos2, aes(Emi2, emisora.2.horario)) +
 	  geom_count(colour = rgb(0.36, 0.79, 0.95))
-	
+	View(datos2)
 	@
 	\caption{Emisoras y horarios preferidos}
 	\end{figure}
@@ -617,6 +621,11 @@ Emisoras y horarios preferidos:
 	datos2 <- datos2[!is.na(datos2$cultivo2), ]
 	ggplot(datos2, aes(cultivo2)) + 
 	  geom_bar(fill = rgb(0.36, 0.79, 0.95))
+	
+	
+
+	
+	
 	@
 	\caption{Cultivo al que se dedican las personas como segunda opcion}
 	\end{figure}
@@ -647,7 +656,9 @@ Emisoras y horarios preferidos:
 	ggplot(datos2, aes(cultivo2, qcultivo2), na.rm = TRUE) +
 	  geom_count(colour = rgb(0.36, 0.79, 0.95)) +
 	  scale_size_area()
-
+	  
+	
+	
 	@
 	\caption{Cantidad de cultivo de la segunda opcion de cultivo en \comunidad}
 	\end{figure}
@@ -758,6 +769,9 @@ Emisoras y horarios preferidos:
 	datos2 <- datos2[!is.na(datos2$animal1), ]
 	ggplot(datos2, aes(animal1)) + 
 	  geom_bar(fill = rgb(0.36, 0.79, 0.95))
+
+	
+	
 	@
 	\caption{Animales al que se dedican las personas como primera opcion}
 	\end{figure}
@@ -816,6 +830,8 @@ Emisoras y horarios preferidos:
 	datos2 <- datos2[!is.na(datos2$tipo.1), ]
 	ggplot(datos2, aes(tipo.1)) + 
 	  geom_bar(fill = rgb(0.36, 0.79, 0.95))
+
+	
 	@
 	\caption{Metodo de crianza de la primera opcion de crianza de animales en \comunidad}
 	\end{figure}
@@ -873,6 +889,7 @@ Emisoras y horarios preferidos:
 	ggplot(datos2, aes(animal2, cabezas2)) +
 	  geom_count(color = rgb(0.36, 0.79, 0.95)) +
 	  scale_size_area()
+	
 	@
 	\caption{Cantidad de animales criados de segunda opcion en funcion a la cantidad y especie en \comunidad}
 	\end{figure}
@@ -960,6 +977,7 @@ Emisoras y horarios preferidos:
 	ggplot(datos2, aes(animal3, cabezas3), na.rm = TRUE) +
 	  geom_count(color = rgb(0.36, 0.79, 0.95)) + 
 	  scale_size_area()
+	
 	@
 	\caption{Cantidad de animales criados de tercera opcion en funcion a la cantidad y especie en \comunidad}
 	\end{figure}
@@ -1013,7 +1031,7 @@ Emisoras y horarios preferidos:
 	
 	graph13 <- ggplot(datos2, aes(accrecurso)) +
   geom_bar( fill = rgb(0.36, 0.79, 0.95), colour = "black") + xlab("") + ylab("Frecuencia")  
-	graph13
+	graph13 + theme_minimal()
 	@
 	\caption{Acceso al recurso}
 	\end{figure}
@@ -1089,6 +1107,8 @@ Emisoras y horarios preferidos:
 	datos2 <- datos2[!is.na(datos2$satisfecho), ]
 	ggplot(datos2, aes(satisfecho)) + 
 	  geom_bar(fill = rgb(0.36, 0.79, 0.95))
+	
+	
 	@
 	\caption{Satisfaccion con el uso del recurso}
 	\end{figure}
@@ -1119,6 +1139,8 @@ Emisoras y horarios preferidos:
 	datos2 <- datos2[!is.na(datos2$Ocaptacion), ]
 	ggplot(datos2, aes(Ocaptacion)) + 
 	  geom_bar(fill = rgb(0.36, 0.79, 0.95))
+	
+	
 	@
 	\caption{Otro recurso que suple la oferta del recurso}
 	\end{figure}
@@ -1241,12 +1263,13 @@ Emisoras y horarios preferidos:
 	#modifica aquellos valores vacios por NA.
 	datos2$ingresof[datos2$ingresof == ""] <- NA
 	datos2$ingresof[datos2$ingresof == "No sabe"] <- NA
-	
 	datos2$ingresof <- as.numeric(datos2$ingresof)
-	datos2 <- datos2[!is.na(datos2$ingresof), ] 
-	
+	datos2$uso[datos2$integrantes == ""] <- NA
 	ggplot(datos2, aes(ingresof, integrantes), na.rm = TRUE) +
 	  geom_count(color = rgb(0.36, 0.79, 0.95))
+	
+	
+	
 	@
 	\caption{Ingreso promedio de las familias de \comunidad en funciona a la cantidad de persionas que trabajan}
 	\end{figure}
@@ -1275,6 +1298,8 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	datos2 <- datos2[!is.na(datos2$religion), ]
 	ggplot(datos2, aes(religion)) + 
 	  geom_bar(fill = rgb(0.36, 0.79, 0.95))
+	
+	
 	@
 	\caption{Religion de los pobladores de \comunidad}
 	\end{figure}
@@ -1375,10 +1400,12 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	datos2 <- datos2[!is.na(datos2$pago), ]
 	ggplot(datos2, aes(pago)) + 
 	  geom_bar(fill = rgb(0.36, 0.79, 0.95))
+	
+	
 	@
 	\caption{Pago realizado para el comite de gestion de qochas en \comunidad}
 	\end{figure}
-	De la unica persona que indica que existe un comite de gestión para las qochas, indica que no se realiza el pago a este comite.\\
+	El dato del gráfico muestra que los pobladores de la comunidad de Chilloroya no pagan al comité de gestión. lo cual podría indicar que la comunidad tiene entendido sobre el derecho de acceso al agua, además existe un principio de seguridad de el agua donde se promueve y vela por este recurso hídricos\\
 	\\
 	Existe alguna organizacion externa dedicada al cuidado de la qocha, de la cual se tiene la siguiente respuesta
 	\begin{figure}[H]
@@ -1405,7 +1432,7 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	@
 	\caption{Organizacion externa encargada del cuidado de la qocha}
 	\end{figure}
-	Se observa que todos los encuestados indican que no existe una organización externa encargada del cuidado de qochas en \comunidad, solo un pequeño porcentaje de pobladores señalan que tienen cuidados a nivel externo.\\
+	Se observa que todos los encuestados indican que no existe una organización externa encargada del cuidado de qochas en la \comunidad, solo un pequeño porcentaje de pobladores señalan que cuidan las Qochas. Este último podría indicar que existe una organiación en la protección por parte de los pobladores de la zona\\
 	\\
 	Se explicó informacion respecto a los beneficios del proyecto, por lo que se consulto si la persona estaria dispuesta en apoyar durante la fase de funcionamiento que comprende la operacion y mantenimiento, de lo cual se tiene la siguiente respuesta:
 	\begin{figure}[H]
@@ -1436,9 +1463,9 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	@
 	\caption{Disposicion de apoyo durante la ejecucion del proyecto}
 	\end{figure}
-	Se observa que todos los encuestados estarian dispuestos a apoyar durante la fase de ejecucion del proyecto, en específico en la etapa operación y mantenimento de las presas o Qochas asimismo en las actividades que se intervenga con la parte agronómica en la comunidad.\\
+	Se observa que todos los encuestados estarían dispuestos a apoyar durante la fase de ejecución del proyecto, en específico en la etapa operación y mantenimento de las presas o Qochas asimismo en las actividades que se intervenga con la parte agronómica en la comunidad.\\
 	\\
-	Explicada la constitucion de un comite encargado de la etapa de funcionamiento del proyecto se consulto la predisposicion de los encuestados a pagar una cuata maxima, de la cual se obtuvo las siguientes cantidades:
+	Explicada la constitución de un comite encargado de la etapa de funcionamiento del proyecto se consulto la predisposicion de los encuestados a pagar una cuata maxima, de la cual se obtuvo las siguientes cantidades:
 	\begin{figure}[H]
 	\centering
 	<<veintiocho, echo = FALSE, fig.width=5, fig.height=3>>=
@@ -1467,9 +1494,9 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	@
 	\caption{Disposicion a pagar cuota durante el periodo de funcionamiento del proyecto}
 	\end{figure}
-	Se puede observar que entre quienes esten dispuestos a pagar y no, la proporción es muy cercana, siendo mas alta quienes si apoyarian a pagar, esto sugiere que los pobladores de la comuidad están comprometidos con la labor que vana a realizar despues ejecutado el proeyecto en la zona.\\
+	Se puede observar que entre quienes esten dispuestos a pagar y no, la proporción es alejado, siendo mas alta quienes si apoyarian a pagar, esto podría indicar que los pobladores de la comunidad están comprometidos con la labor que van a realizar despues ejecutado el proyecto en la zona, mientras hay encuestados que no están dispuestos a pagar despues ejecutado el proyecto\\
 	\\
-	De la consulta respecto a la percepcion de un adecuado uso de las qochas por parte de las personas, se tiene la siguiente informacion:
+	De la consulta respecto a la percepción de un adecuado uso de las qochas por parte de las personas, se tiene la siguiente informacion:
 	\begin{figure}[H]
 	\centering
 	<<veintinueve, echo = FALSE, fig.width=5, fig.height=3>>=
@@ -1488,11 +1515,13 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	datos2 <- datos2[!is.na(datos2$usoadecuado), ]
 	ggplot(datos2, aes(usoadecuado)) + 
 	  geom_bar(fill = rgb(0.36, 0.79, 0.95))
+	
+	
 	@
 	\caption{Percepcion de uso adecuado de las qochas}
-	En este caso las dos alternativas son muy cercanas en proporción, esto concluye que las Qochas son usadas en el riego de sus parcelas sí las condiciones geográficas lo permite, existe un porcentaje similar que no usan adecuadamente el agua de las Qochas.
 	\end{figure}
-	En este caso 
+	En este caso las dos alternativas tienen la misma proporción, esto concluye que las Qochas son usadas en el riego de sus parcelas sí las condiciones geográficas lo permite, Finalmente existen familias que no usan adecuadamente el agua de la Qocha.\\
+	\\
 	\section{Aspectos de medio ambiente}
 	Perjuicio en la actividad agropecuaria debido al cambio climatico
 	\begin{figure}[H]
@@ -1522,6 +1551,8 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	#webshot::install_phantomjs(force = TRUE)
   
 	#datos2$Climatico[datos2$Climatico == "si"] <- NA
+  
+	
 	noNaa <- datos2$Climatico[!is.na(datos2$Climatico)]
 	frecuencias <- table(noNaa)
 	graph18 <- wordcloud2(data = frecuencias, size = 3)
@@ -1529,7 +1560,7 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	@
 	\caption{Perjuicio en la actividad agropecuaria debido al cambio climatico}
 	\end{figure}
-	Como se aprecia los perjuicios producidos por el cambio climatico identificados por los encuestados son los siguientes: no hay nevados, poca agua, friaje y menor produccion.\\
+	Como se aprecia los perjuicios producidos por el cambio climático identificados por los encuestados son los siguientes: no hay nevados, poca agua, friaje y menor produccion. esto podría indicar que el caletamiento global es notorio, tambien los actores directos que viven en las zonas altas, propician el derretimiento, alteración de la lluvia con las prácticas que realizan en el pastoreo y agricultura.\\
 	\\
 	Especies de flora identificadas en la qocha
 	
@@ -1592,7 +1623,7 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	@
 	\caption{Especies de fauna identificadas en la qocha}
 	\end{figure}
-	Se observa que la especie de fauna identificada con mayor frecuencia es Sapo, esto indica que el medio ambiente donde viven estas especies de anfibios están preservadas de una manera natural, no hay intervención química que alteren la vida. Finalmente no han identificado ninguna otra especie en la Qocha.\\
+	Se observa que la especie de fauna identificada con mayor frecuencia es Sapo, esto indica que el medio ambiente donde habitan estas especies de anfibios están preservadas de una manera natural, no hay intervención química que alteren la vida. Finalmente no se han identificado ninguna otra especie en la Qocha.\\
 	\\
 	Especies vegetales nativas en extincion.
 	\begin{figure}[H]
@@ -1622,7 +1653,7 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	@
 	\caption{Especies vegetales en extincion}
 	\end{figure}
-	De las especies vegetales en peligrro de extincion, se ha identificado que el especie en peligro pérdida es el pasto, se podría concluir que el sobrepastoreo en la comunidad es la causa principal, así como tambien la escases del agua en la parte alta dificulta realizar activides de riego para estas especies. Seguido de las especies deOqoruro, Tacalafra escasean en la misma proporcion.\\
+	De las especies vegetales en peligro de extinción, se ha identificado el pasto, Tacalafra y Oqoruro, se podría concluir que el sobrepastoreo en la comunidad es la principal causa, así como tambien la escases del agua en la parte alta dificulta realizar activides de riego para estas especies. Finalmente hay pobladores que afirman que ninguna especie está riesgo de desaparecer del lugar.\\
 	\\
 	Modificaciones identificadas en la turba de la qocha.
 	\begin{figure}[H]
@@ -1653,7 +1684,7 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	@
 	\caption{Alteraciones de la turba en la qocha}
 	\end{figure}
-	Se observa que los pobladores identifican que la turba se esta secando y desapareciendo. Lo cual podría afirmar que hay pérdida de los factores que las mantiene como es el caso de a especies que habitan el lugar y el decaimiento de otras especies originales en el lugar\\
+	Se observa que los pobladores identifican que la turba se esta secando y desapareciendo. Lo cual podría afirmar que hay pérdida de los factores que las mantiene como es el caso de las especies que habitan el lugar y el decaimiento de otras especies originarias en el lugar\\
 	\\
 	Alteraciones en la precipitación pluvial en la zona de la qocha
 	\begin{figure}[H]
@@ -1680,7 +1711,7 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	@
 	\caption{Alteraciones pluviales en las zonas de qochas}
 	\end{figure}
-	La mayor alteracion pluvial que se ha indetificado es que hay menos lluvias en la zona de las qochas. \\
+	La mayor alteracion pluvial que se ha indetificado es que hay menos lluvias en la zona de las qochas. esto podría indicar que es la cuasa de el actual fenómeno del Niño, lo cual afecta a la producción y alimentación de la poblacion en la comunidad de Chilloroya.\\
 	\\
 	Alteraciones en el suelo en la zona de la qocha
 		\begin{figure}[H]
@@ -1706,6 +1737,7 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	graph18 <- wordcloud2(data = frecuencias, size = 1.5)
 	graph18
 	
+	View(datos2)
 	
 	#table(datos2$Lluvia)
 	
