@@ -1244,7 +1244,7 @@ Emisoras y horarios preferidos:
 	@
 	\caption{Ingreso promedio de las familias de \comunidad}
 	\end{figure}
-	Se puede observar que el promedio de ingreso familiar en la comunidad de Chilloroya se sitúa entre 400 a 500 soles, seguido algunas familias tienen un ingreso que varia 400 a 950 soles, tambien se pudo obervar que el ingreso propmedio de la familia es de 3000 soles, finalmente se encontró que hay familias donde el ingreso varia entre 1000 a 1500 soles.\\
+	Se puede observar que el promedio de ingreso familiar en la comunidad de Chilloroya se sitúa entre 400 a 500 soles, seguido de algunas familias tienen un ingreso que varia de 400 a 950 soles, tambien se pudo obervar que el ingreso propmedio de la familia es de 3000 soles, finalmente se encontró que hay familias donde el ingreso varia entre 1000 a 1500 soles.\\
 	\\
 	Combinando la cantidad de integrantes que trabajan y el ingreso promedio mensual, se tiene lo siguiente:
 	
@@ -1273,7 +1273,7 @@ Emisoras y horarios preferidos:
 	@
 	\caption{Ingreso promedio de las familias de \comunidad en funciona a la cantidad de persionas que trabajan}
 	\end{figure}
-Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un ingreso promedio mensual de 3000 soles, seguido de 2 integrantes que pueden generar un ingreso que varie de 500 a 1500 soles, tambien se observa que 5 integrantes tienen un promedio mensual que varia entre 600 a 700 soles.
+Los datos del gráfico muestran que 6 integrantes de la familia pueden generar un ingreso promedio mensual de 3000 soles, seguido de 2 integrantes que pueden generar un ingreso que varie de 500 a 1500 soles, tambien se observa que 5 integrantes tienen un promedio mensual que varia entre 600 a 700 soles.
 	\section{Aspectos sociales y culturales}
 	De la religion que los encuestados creen se tiene la siguiente informacion:
 	\begin{figure}[H]
@@ -1327,7 +1327,7 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	@
 	\caption{Organizacion dedicada a actividades culturales en la qocha}
 	\end{figure}
-	Se observa que la mayoria de los pobladores indica que no existe alguna organizacion dedicada a la realizacion de actividades culturales en la qocha, mientras que solo una persona indica que no sabe.  
+	Se observa que la mayoria de los pobladores indica que no existe alguna organizacion dedicada a la realización de actividades culturales en la Qocha, mientras que solo una persona señala que no sabe.  
 	\section{Aspectos de gestion}
 	De la consulta de la existencia de algun comite encargardo del funcionamiento de la qocha se obtuvo lo siguiente:
 	\begin{figure}[H]
@@ -1352,7 +1352,7 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	@
 	\caption{Comite encargado de la gestion del uso de la qocha en \comunidad}
 	\end{figure}
-	Se observa que la mayoria de los encuestados indican que no existe un comite de gestión encargado del uso de la qocha ademas un pequeño grupo señalan que si hay un comité.\\
+	Se observa que la mayoria de los encuestados indican que no existe un comite de gestión encargado del uso de la qocha, además un pequeño grupo señalan que si hay un comité.\\
 	\\
 	De la frecuencia al año con que se realizan actividades de mantenimiento o prevención
 	\begin{figure}[H]
@@ -1377,7 +1377,7 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	@
 	\caption{Frecuencia de realizacion de actividades de faena en la qocha}
 	\end{figure}
-	De la única persona que indica que existe un comite de gestión encargado de la qocha, se identifica que la frecuencia de realizacion de faenas es semestral, seguido del trimestral y anual.\\
+	Del gráfico se puede ver la frecuencia de realización de la faena es semestral lo cual quiere decir estás se práctican cada 6 meses; asimismo hay pobladores que llevan las faenas trimestralmente, un grupo reducido indica que se realiza anualmente.\\
 	\\
 	De la frecuencua, al año, con que se paga al comite se tiene la siguiente informacion:
 	\begin{figure}[H]
@@ -1405,7 +1405,7 @@ Los datos del gráfico muestra que 6 integrantes de la familia pueden generar un
 	@
 	\caption{Pago realizado para el comite de gestion de qochas en \comunidad}
 	\end{figure}
-	El dato del gráfico muestra que los pobladores de la comunidad de Chilloroya no pagan al comité de gestión. lo cual podría indicar que la comunidad tiene entendido sobre el derecho de acceso al agua, además existe un principio de seguridad de el agua donde se promueve y vela por este recurso hídricos\\
+	El dato del gráfico muestra que los pobladores de la comunidad de Chilloroya no pagan al comité de gestión. lo cual podría indicar que la comunidad tiene entendido sobre el derecho de acceso al agua, además existe un principio de seguridad del mismo donde se promueve y vela por este recurso hídricos\\
 	\\
 	Existe alguna organizacion externa dedicada al cuidado de la qocha, de la cual se tiene la siguiente respuesta
 	\begin{figure}[H]
